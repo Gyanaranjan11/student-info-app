@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+{% include 'navbar.html' %}
+</nav>
+
+<div class="container">
+    <div>
+        <h3>Enter the web address of any website</h3>
+    <form method="POST" action="/test/" class="form-inline my-2 my-lg-0">
+        {% csrf_token %}
+      <input class="form-control mr-sm-2" name = "link" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Get Links</button>
+    </form></div>
+<div>{% if total %}
+    <h6 style="color: blue">Total link Available in the webpage is  :  {{ total }} </h6>
+    {% endif %}
+</div>
+    <div>
+
+        {% if links %}
+            {% for i in links %}
+                <h6>{{ i }}</h6>
+
+            {% endfor %}
+            {% else %}
+            <h2 style="color: red">Data is Not available Please Enter a valid Website Url to get all the links inside the Url</h2>
+        {% endif %}
+    </div>
+
+
+</div>
+</body>
+</html>

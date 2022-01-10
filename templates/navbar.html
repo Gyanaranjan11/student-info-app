@@ -1,0 +1,21 @@
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'changepassword' %}">Change Password <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item"  >
+        <a class="nav-link" href="{% url 'logout' %}">logout</a>
+      </li>
+        <li class="nav-item"  >
+        <a class="nav-link" href="{% url 'test' %}">Link details</a>
+      </li>
+        <li>
+            <a href="{% url 'c_student_info' %}" type="button" class="btn btn-success">ADD Student</a>
+        </li>
+    </ul>
+    <form method="POST" action="/searchstudent/" class="form-inline my-2 my-lg-0">
+        {% csrf_token %}
+      <input class="form-control mr-sm-2" name = "name" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>

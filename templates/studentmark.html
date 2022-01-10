@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Marks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% if data %}
+<div class="container">
+  <h2>Student Mark of  Each subject</h2>
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+            <th>Roll no.</th>
+            <th>name</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Math </th>
+            <th>English</th>
+            <th>Biology</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+    {%for i in data%}
+         <td>{{ i.roll_no.roll_no }}</td>
+         <td>{{ i.roll_no.name }}</td>
+        <td>{{i.physic}}</td>
+        <td>{{i.chemistry}}</td>
+        <td>{{i.math}}</td>
+        <td>{{i.biology}}</td>
+        <td>{{i.english}}</td>
+      </tr>
+
+    </tbody>{%endfor%}
+  </table>
+  {%else%}
+      <h2>Data is Note Available Please Insert Data</h2>
+      {%endif%}
+</div>
+
+</body>
+</html>
