@@ -4,6 +4,12 @@ from django.apps import AppConfig
 class StudentinfoappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'StudentinfoApp'
+
+def test():
+    print("_----------------------")
+    print("gyana")
+    print("_----------------------")
+    print("gyana")
 class StudentAcademic(models.Model):
     roll_no = models.ForeignKey(StudentInfo, on_delete=models.CASCADE)
     math = models.IntegerField(null=True, blank=True)
