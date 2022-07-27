@@ -19,3 +19,11 @@ class StudentAcademic(models.Model):
 
     def __str__(self):
         return self.roll_no.name
+    
+class StudentInfo(models.Model):
+    roll_no = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50, null=True, blank=True)
+    sclass = models.CharField(max_length=50, null=True, blank=True)
+    school = models.CharField(max_length=50, null=True, blank=True)
+    mobile = models.IntegerField(null=True, blank=True)
+    address = models.CharField(max_length=100, null=True, blank=True)
