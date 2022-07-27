@@ -45,4 +45,19 @@ class StudentInfo(models.Model):
     sclass = models.CharField(max_length=50, null=True, blank=True)
     school = models.CharField(max_length=50, null=True, blank=True)
     mobile = models.IntegerField(null=True, blank=True)
+    english = models.IntegerField(null=True, blank=True)
+    biology = models.IntegerField(null=True, blank=True)
     address = models.CharField(max_length=100, null=True, blank=True)
+from StudentinfoApp.models import StudentInfo, StudentAcademic
+
+
+class StudentInfoFrom(forms.ModelForm):
+    class Meta:
+        model = StudentInfo
+        fields = '__all__'
+
+
+class StudentAcademicFrom(forms.ModelForm):
+    class Meta:
+        model = StudentAcademic
+        fields = '__all__'

@@ -36,5 +36,14 @@ class StudentAcademic(models.Model):
     math = models.IntegerField(null=True, blank=True)
     physic = models.IntegerField(null=True, blank=True)
     chemistry = models.IntegerField(null=True, blank=True)
+<<<<<<< HEAD
     english = models.IntegerField(null=True, blank=True)
     biology = models.IntegerField(null=True, blank=True)
+=======
+    english = models.IntegerField(null=True, blank=True),english = models.IntegerField(null=True, blank=True)
+    biology = models.IntegerField(null=True, blank=True)
+    biology = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.roll_no.name
+>>>>>>> ab84f3dbbf94a7e1c965880d9b5466ec941bd48f
